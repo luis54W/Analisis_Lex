@@ -17,3 +17,11 @@ int main(int argc, char *argv[])
 		cout<<"El archivo no existe o no tienes permisos"<<endl;
 		exit(EXIT_FAILURE);
 	}
+	
+
+	istream is(&fb);
+	Lexer lexer(&is);
+	lexer.yylex();
+	fb.close();
+	return 0;
+}
